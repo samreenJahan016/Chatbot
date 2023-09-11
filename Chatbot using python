@@ -1,0 +1,25 @@
+import random
+
+# Define a dictionary of responses
+responses = {
+    "hello": "Hello! How can I assist you today?",
+    "how are you": "I'm just a computer program, but I'm here to help.",
+    "bye": "Goodbye! Have a great day.",
+}
+
+# Function to generate responses
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+    if user_input in responses:
+        return responses[user_input]
+    else:
+        return "I'm not sure how to respond to that."
+
+# Main loop
+while True:
+    user_input = input("You: ").strip()
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    response = chatbot_response(user_input)
+    print("Chatbot:", response)
